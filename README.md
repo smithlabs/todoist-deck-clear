@@ -13,7 +13,7 @@ To get started with the Todoist Task Management Scripts, follow the steps below:
 
    To use the Todoist API, you need to obtain an API token and set it up in the project. Follow the steps below:
 
-   - Go to the Todoist Developer website.
+   - Go to the [Todoist Developer website](https://todoist.com/help/articles/8048880904476).
    - Follow the instructions provided to create a new app and obtain an API token.
    - Once you have obtained the API token, create a file named `token` in the project directory.
    - Open the `token` file and paste the API token into it.
