@@ -1,13 +1,13 @@
-##### Project Roadmap
+# Project Roadmap
 
-Initial changes
+### Initial changes
 -   turn it into a CLI instead of a few scripts. so refactor it so you have 1 `main()` and have each 'script' become a sub-command.
 -   as mentioned, fix all the pip8 issues as needed.
 -   remove the big `try/catch` blocks, try to keep those scoped small
 -   replace `print` with a logger
 -   add a setup.py to make it installable
 
-Testing framework
+### Testing framework
 -   pass `api` as an argument to your functions, instead of `api_key` here: [https://github.com/smithlabs/todoist-deck-clear/blob/main/delete-tasks.py#L6](https://github.com/smithlabs/todoist-deck-clear/blob/main/delete-tasks.py#L6). This makes it easier to mock/test.
 -   Unit tests: create a fake/mock `TodistAPI` with the methods your using.
 -   Write some unit tests. Example: `test_delete_tasks()`. Create your `MockTodoistAPI` object at the beginning. Add some fake projects to your mock so that they will be returned by it when you call `api.get_projects()` on the mock. Similarly, add some fake tasks for the projects the fake is going to return. Finally, call `delete_tasks(fake_todoist, ["some-project"], False)` and verify the mock no longer has the tasks that should be deleted.
@@ -16,7 +16,7 @@ Hardest part is likely understanding and figuring out how to use a fake/mock and
 
 Python has builtin mocking support, so you can probably use that, but IMO, it can be a bit magical and i find it can be more useful to write your own, simple fakes/mocks to test when you are learning.
 
-##### Overview
+# Overview
 
 **Feedback from a FAANG Engineer on my code**
 
@@ -83,7 +83,7 @@ projects = api.get_projects()
 ```
 
 ---
-##### Guidelines
+# Guidelines
 
 The four essential rules:
 1. Keep comments as close to the code being described as possible.
