@@ -41,6 +41,69 @@ To get started with the Todoist Task Management Scripts, follow the steps below:
 
 Make sure to review the script files and configure the settings appropriately before running any scripts. These scripts provide convenient automation for managing tasks in Todoist, helping you maintain productivity and organization.
 
+### How Tasks Are Backed Up in JSON
+
+The backup script creates a dedicated folder named "backup" in the project directory. Within this folder, it generates one JSON file per project specified in the `settings.json` file. Each JSON file contains the serialized representation of tasks and sub-tasks, allowing for easy recreation using the restore script.
+
+Here is an example directory structure:
+
+```
+backup
+├── project1.json
+├── project2 ideas.json
+├── project3.json
+└── inbox.json
+```
+
+For instance, let's consider the contents of the `backup/project1.json` file, which includes two tasks: "Buy eggs" and "Buy milk".
+
+```json
+[
+  {
+    "assignee_id": null,
+    "assigner_id": null,
+    "comment_count": 0,
+    "is_completed": false,
+    "content": "Buy eggs",
+    "created_at": "2023-05-28T21:02:06.488170Z",
+    "creator_id": "42970196",
+    "description": "",
+    "due": null,
+    "id": "6917477720",
+    "labels": [],
+    "order": 1,
+    "parent_id": null,
+    "priority": 1,
+    "project_id": "123456789",
+    "section_id": null,
+    "url": "https://todoist.com/showTask?id=123456789",
+    "sync_id": null
+  },
+  {
+    "assignee_id": null,
+    "assigner_id": null,
+    "comment_count": 0,
+    "is_completed": false,
+    "content": "Buy milk",
+    "created_at": "2023-05-28T21:02:06.891954Z",
+    "creator_id": "42970196",
+    "description": "",
+    "due": null,
+    "id": "987654321",
+    "labels": [],
+    "order": 2,
+    "parent_id": null,
+    "priority": 1,
+    "project_id": "2312208059",
+    "section_id": null,
+    "url": "https://todoist.com/showTask?id=987654321",
+    "sync_id": null
+  }
+]
+```
+
+The JSON file includes detailed information about each task, such as its content, creation date, project ID, URL, and more. This serialized format allows for seamless restoration of tasks and their associated properties using the restore script.
+
 ### Backup Tasks Script
 
 The "Backup Tasks" script is a Python script that allows you to back up tasks from Todoist projects. It uses the Todoist API to retrieve project information and tasks, and then creates backups in JSON format.
