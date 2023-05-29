@@ -18,26 +18,26 @@ To get started with the Todoist Task Management Scripts, follow the steps below:
      ```
 
 3. Backup Tasks:
-   - The `backup_tasks.py` script allows you to create backups of tasks from Todoist projects.
+   - The `backup-tasks.py` script allows you to create backups of tasks from Todoist projects.
    - Ensure you have the required dependencies installed by running `pip install -r requirements.txt`.
    - Obtain a Todoist API token and place it in a file named `token` in the project directory.
    - Modify the `settings.json` file to include the project names you want to back up.
-   - Run the script using the command `python backup_tasks.py`.
+   - Run the script using the command `python backup-tasks.py`.
 
 4. Delete Tasks:
-   - The `delete_tasks.py` script enables you to delete tasks from Todoist projects.
+   - The `delete-tasks.py` script enables you to delete tasks from Todoist projects.
    - Ensure you have the required dependencies installed by running `pip install -r requirements.txt`.
    - Obtain a Todoist API token and place it in a file named `token` in the project directory.
    - Modify the `settings.json` file to include the project names from which you want to delete tasks.
-   - Run the script using the command `python delete_tasks.py`.
+   - Run the script using the command `python delete-tasks.py`.
 
 5. Restore Tasks:
-   - The `restore_tasks.py` script allows you to restore backups of tasks to Todoist projects.
+   - The `restore-tasks.py` script allows you to restore backups of tasks to Todoist projects.
    - Ensure you have the required dependencies installed by running `pip install -r requirements.txt`.
    - Obtain a Todoist API token and place it in a file named `token` in the project directory.
    - Ensure that backup JSON files are located in the "backup" folder within the project directory, following the lowercase naming convention.
    - Modify the `settings.json` file to include the project names you want to restore tasks to.
-   - Run the script using the command `python restore_tasks.py`.
+   - Run the script using the command `python restore-tasks.py`.
 
 Make sure to review the script files and configure the settings appropriately before running any scripts. These scripts provide convenient automation for managing tasks in Todoist, helping you maintain productivity and organization.
 
@@ -122,7 +122,7 @@ To use the script, follow these steps:
         "projects": ["Project 1", "Project 2"]
     }
     ```
-6. Run the script using the command `python backup_tasks.py`. By default, the script will create backups without a dry run. If you want to perform a dry run without actually creating backups, use the `--dry-run` flag.
+6. Run the script using the command `python backup-tasks.py`. By default, the script will create backups without a dry run. If you want to perform a dry run without actually creating backups, use the `--dry-run` flag.
 7. The script will create backup files for each project in a folder named "backup" within the project directory. The backup files will be named in lowercase using the project names. For example, for a project named "Project 1", the backup file will be "backup/project 1.json".
 
 #### Example Output
@@ -145,7 +145,7 @@ All backups have been created.
 
 #### Additional Notes
 
-- The script uses the `argparse` module to parse command-line arguments. You can run `python backup_tasks.py --help` to see the available options.
+- The script uses the `argparse` module to parse command-line arguments. You can run `python backup-tasks.py --help` to see the available options.
 - The `object_to_dict` function is a helper function used to convert objects to dictionaries. It recursively handles different types of objects and their attributes.
 - The script assumes the presence of the `todoist_api_python` package, which can be installed via `pip`. Make sure you have it installed or include it in your `requirements.txt` file.
 - The script reads the Todoist API token from a file named `token` in the project directory. Make sure to replace the content of this file with your own API token.
@@ -170,7 +170,7 @@ Deleting task: 'Task 2' in project 'Project 2'
 
 #### Additional Notes
 
-- The script uses the `argparse` module to parse command-line arguments. You can run `python delete_tasks.py --help` to see the available options.
+- The script uses the `argparse` module to parse command-line arguments. You can run `python delete-tasks.py --help` to see the available options.
 - The script assumes the presence of the `todoist_api_python` package, which can be installed via `pip`. Make sure you have it installed or include it in your `requirements.txt` file.
 - The script reads the Todoist API token from a file named `token` in the project directory. Make sure to replace the content of this file with your own API token.
 - The script reads the project names to delete tasks from the `settings.json` file. Make sure to update the list of project names accordingly.
@@ -190,7 +190,7 @@ The "Restore Tasks" script is a Python script that allows you to restore backups
         "projects": ["Project 1", "Project 2"]
     }
     ```
-7. Run the script using the command `python restore_tasks.py`. By default, the script will restore tasks without performing a dry run. If you want to perform a dry run without actually making any changes, use the `--dry-run` flag.
+7. Run the script using the command `python restore-tasks.py`. By default, the script will restore tasks without performing a dry run. If you want to perform a dry run without actually making any changes, use the `--dry-run` flag.
 8. The script will iterate through the specified projects, read the corresponding backup JSON files, and create tasks based on the backup data.
 
 #### Example Output
