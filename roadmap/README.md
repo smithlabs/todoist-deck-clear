@@ -24,7 +24,8 @@ Python has builtin mocking support, so you can probably use that, but IMO, it ca
 
 Ouch! 
 
-![[Pasted image 20230529082602.png]]
+![pain](https://i.imgur.com/zDSfPwK.png)
+
 
 **My code sucks, where do I start?**
 
@@ -113,7 +114,7 @@ def hello_name(name: str) -> str:
 
 In all cases, the docstrings should use the triple-double quote (`"""`) string format. This should be done whether the docstring is multi-lined or not. At a bare minimum, a docstring should be a quick summary of whatever is it you’re describing and should be contained within a single line.
 
-![[Pasted image 20230529092636.png]]
+![python-tings-mon](https://i.imgur.com/0KPLgZp.png)
 
 All docstrings should have the same max character length as comments (72 characters). Docstrings can be further broken up into three major categories:
 
@@ -144,4 +145,5 @@ dir()
 
 **Code formatter**: Use a code formatter
 
-1. https://github.com/psf/black has a neovim integration https://github.com/averms/black-nvim
+1. Use [flake8](https://flake8.pycqa.org/en/latest/) initially for learning
+2. Later on use this - https://github.com/psf/black has a neovim integration https://github.com/averms/black-nvim
