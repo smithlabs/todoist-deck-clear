@@ -1,5 +1,28 @@
+"""Todoist Task Backup
+
+This script creates backups of your Todoist tasks by retrieving your
+current tasks from your specified Todoist projects from the Todoist API
+and saves them as serialized JSON files. The backup files are stored
+in the 'backup/' folder created in the script's directory.
+
+Specify the projects you want to backup in the 'settings.json' file.
+
+Each project's backup file is named to match its corresponding Todoist
+Project name (e.g., A project called Work saves as 'backup/work.json').
+
+It's required to generate a Todoist API token and place it in a
+'token' file in the same folder as the script.
+
+The following modules are used:
+    * argparse - adds runtime flags
+    * json - for serializing the tasks from the API
+    * todoist_api_python - for making API calls to Todoist
+"""
+
 import argparse
+
 import json
+
 from todoist_api_python.api import TodoistAPI
 
 def object_to_dict(obj):
