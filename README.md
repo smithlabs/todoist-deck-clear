@@ -2,12 +2,26 @@
 
 To get started with the Todoist Task Management Scripts, follow the steps below:
 
-1. Clone the repository:
+To get started with the Todoist Task Management Scripts, follow the steps below:
+
+1. **Clone the repository:**
    ```
    git clone https://github.com/smithlabs/todoist-task-scripts.git
    ```
 
-2. Create the `settings.json` file:
+2. **Setting up the API Key:**
+
+   To use the Todoist API, you need to obtain an API token and set it up in the project. Follow the steps below:
+
+   - Go to the Todoist Developer website.
+   - Follow the instructions provided to create a new app and obtain an API token.
+   - Once you have obtained the API token, create a file named `token` in the project directory.
+   - Open the `token` file and paste the API token into it.
+   - Save the file.
+
+   Make sure to keep your API token confidential and avoid sharing it with others, as it grants access to your Todoist account.
+
+3. **Create the `settings.json` file:**
    - Navigate to the project directory.
    - Create a file named `settings.json`.
    - Inside `settings.json`, specify the project names you want to perform actions on. For example:
@@ -17,22 +31,28 @@ To get started with the Todoist Task Management Scripts, follow the steps below:
      }
      ```
 
-3. Backup Tasks:
-   - The `backup-tasks.py` script allows you to create backups of tasks from Todoist projects.
+4. **Backup Tasks:**
+
+   The `backup-tasks.py` script allows you to create backups of tasks from Todoist projects. To backup tasks:
+
    - Ensure you have the required dependencies installed by running `pip install -r requirements.txt`.
    - Obtain a Todoist API token and place it in a file named `token` in the project directory.
    - Modify the `settings.json` file to include the project names you want to back up.
    - Run the script using the command `python backup-tasks.py`.
 
-4. Delete Tasks:
-   - The `delete-tasks.py` script enables you to delete tasks from Todoist projects.
+5. **Delete Tasks:**
+
+   The `delete-tasks.py` script enables you to delete tasks from Todoist projects. To delete tasks:
+
    - Ensure you have the required dependencies installed by running `pip install -r requirements.txt`.
    - Obtain a Todoist API token and place it in a file named `token` in the project directory.
    - Modify the `settings.json` file to include the project names from which you want to delete tasks.
    - Run the script using the command `python delete-tasks.py`.
 
-5. Restore Tasks:
-   - The `restore-tasks.py` script allows you to restore backups of tasks to Todoist projects.
+6. **Restore Tasks:**
+
+   The `restore-tasks.py` script allows you to restore backups of tasks to Todoist projects. To restore tasks:
+
    - Ensure you have the required dependencies installed by running `pip install -r requirements.txt`.
    - Obtain a Todoist API token and place it in a file named `token` in the project directory.
    - Ensure that backup JSON files are located in the "backup" folder within the project directory, following the lowercase naming convention.
@@ -108,6 +128,8 @@ The JSON file includes detailed information about each task, such as its content
 
 The "Backup Tasks" script is a Python script that allows you to back up tasks from Todoist projects. It uses the Todoist API to retrieve project information and tasks, and then creates backups in JSON format.
 
+This script supports a --dry-run feature, allowing you to simulate the actions it would perform without actually making any changes.
+
 #### Details
 
 To use the script, follow these steps:
@@ -155,6 +177,8 @@ Feel free to modify and adapt the script according to your needs. Happy task bac
 
 ### Delete Tasks Script
 
+This script supports a --dry-run feature, allowing you to simulate the actions it would perform without actually making any changes.
+
 #### Example Output
 
 During the execution of the script, you will see output indicating the progress and status of the task deletion process. Here's an example of the output:
@@ -178,6 +202,8 @@ Deleting task: 'Task 2' in project 'Project 2'
 Feel free to modify and adapt the script according to your needs. Use it responsibly to manage your Todoist tasks efficiently!
 
 ### Restore Tasks
+
+This script supports a --dry-run feature, allowing you to simulate the actions it would perform without actually making any changes.
 
 The "Restore Tasks" script is a Python script that allows you to restore backups of tasks to Todoist projects. It utilizes the Todoist API to create tasks based on the information provided in backup JSON files.
 
