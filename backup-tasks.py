@@ -40,6 +40,15 @@ def object_to_dict(obj):
         return object_to_dict(obj.__dict__)
 
 def backup_tasks(api, project_name, dry_run=False):
+    """Retrieves tasks from Todoist API and serializes/saves as JSON
+
+    Parameters
+    ----------
+    api : str
+        Your API token from Todoist
+    project_name : 
+
+    """
     projects = api.get_projects()
     project_dicts = [project.__dict__ for project in projects]
 
@@ -56,7 +65,7 @@ def backup_tasks(api, project_name, dry_run=False):
         
         if dry_run:
             print(f"Dry run: Backup for project '{project_name}' would be created.")
-            print("Tasks to be backed up:")
+            print("Dry run: Tasks to be backed up:")
             for task_dict in task_dicts:
                 print(f"- Task: {task_dict['content']} (Project: {project_name})")
         else:
@@ -66,7 +75,6 @@ def backup_tasks(api, project_name, dry_run=False):
                 file.write(json_array)
                 print(f"Backup for project '{project_name}' has been created: {filename}")
             
-            print("Tasks backed up:")
             for task_dict in task_dicts:
                 print(f"- Task: {task_dict['content']} (Project: {project_name})")
 
@@ -91,7 +99,6 @@ def main():
     for project_name in project_names:
         backup_tasks(api, project_name, dry_run=args.dry_run)
 
-    print("All backups have been created.")
 
 if __name__ == "__main__":
     main()

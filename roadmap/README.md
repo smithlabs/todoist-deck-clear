@@ -1,7 +1,7 @@
 # Project Roadmap
 
 ### Initial changes
--   turn it into a CLI instead of a few scripts. so refactor it so you have 1 `main()` and have each 'script' become a sub-command.
+-   Using [click](https://click.palletsprojects.com/en/8.1.x/), hturn it into a CLI instead of a few scripts. so refactor it so you have 1 `main()` and have each 'script' become a sub-command.
 -   as mentioned, fix all the pip8 issues as needed.
 -   remove the big `try/catch` blocks, try to keep those scoped small
 -   replace `print` with a logger
