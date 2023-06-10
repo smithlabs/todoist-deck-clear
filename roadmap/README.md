@@ -147,3 +147,12 @@ dir()
 
 1. Use [flake8](https://flake8.pycqa.org/en/latest/) initially for learning
 2. Later on use this - https://github.com/psf/black has a neovim integration https://github.com/averms/black-nvim
+
+#### Ideas
+
+I created a small script that pulls from data an external API that returned data in XML format.
+I converted the response from XML to JSON to work better with my existing program.
+
+What you're describing is related to DTO (Data Transfer Object), or at least the behavior that DTO provides.
+
+It's a common, and good, practice.  If your app is optimized for JSON, or your engineers just don't know XML, then it makes sense to design your app to use JSON.  However, if your input is XML, your DTO layer has an object/method to translate the XML to JSON.Then, if your output is sent to a tool that needs CSV, you create another DTO to translate your JSON to CSV.All the important parts of your app are handling JSON, and you just have translations for your input/output.Not just translating between language - if might make sense to translate a JSON input to a different JSON structure.
